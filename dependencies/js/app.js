@@ -1,1 +1,1 @@
-var app = angular.module('MyReddit', []);
+var app = angular.module('McReddit', []);
