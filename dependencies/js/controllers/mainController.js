@@ -121,6 +121,8 @@ app.controller('MainCtrl', ['$scope', function($scope) {
 	$scope.incrementVotes = function(post){
 
 		post.votes++;
-	}
+	};
+
+	$scope.loggedIn = false;
 
 }]);
