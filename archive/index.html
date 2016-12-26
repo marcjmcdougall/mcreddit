@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<meta name="description" content="This is a simple clone of Reddit to learn AngularJS.">
+    <meta name="author" content="Marc J. McDougall">
+
+	<title>Reddit &mdash; The front page of the internet.</title>
+
+	<!-- The Favicon for the site -->
+    <!-- <link rel="icon" href="./assets/img/favicon.ico"> -->
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Font Awesome CSS -->
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+	<!-- Site Font(s) -->
+	<!-- Currenty: Hind (Default) & Montserrat -->
+	<link href="https://fonts.googleapis.com/css?family=Hind:400,700|Montserrat:400,700" rel="stylesheet">
+
+	<!-- Theme CSS -->
+	<link href="./assets/css/main.css" rel="stylesheet">
+
+	 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body ng-app="MyReddit">
+
+	<div id="subreddit-overview">
+				
+		<ul class="inline">
+			
+			<li><a href="#">Front</a></li>
+			<li><a href="#">All</a></li>
+			<li><a href="#">Random</a></li>
+			<li><a href="#">Askreddit</a></li>
+			<li><a href="#">Funny</a></li>
+			<li><a href="#">Pics</a></li>
+			<li><a href="#">Wordlnews</a></li>
+			<li><a href="#">Videos</a></li>
+			<li><a href="#">News</a></li>
+			<li><a href="#">Gifs</a></li>
+			<li><a href="#">Aww</a></li>
+			<li><a href="#">Gaming</a></li>
+			<li><a href="#">TodayILearned</a></li>
+			<li><a href="#">Movies</a></li>
+			<li><a href="#">More...</a></li>
+
+		</ul>
+
+	</div>
+
+	<div id="navigation">
+				
+		<img src="./assets/img/reddit-logo.png">
+		<ul class="inline">
+			
+			<li><a href="#">My Reddit</a></li>
+			<li><a href="#" class="filter active">Hot</a></li>
+			<li><a href="#" class="filter">New</a></li>
+			<li><a href="#" class="filter">Rising</a></li>
+			<li><a href="#" class="filter">Controversial</a></li>
+			<li><a href="#" class="filter">Top</a></li>
+			<li><a href="#" class="filter">Gilded</a></li>
+			<li><a href="#" class="filter">Promoted</a></li>
+
+		</ul>
+
+		<p id="login-prompt">Want to join? <a href="#">Log in</a> or <a href="#">sign up</a> in seconds. | <a href="#" class="language">English</a></p>		
+
+	</div>
+
+	<div id="primary-container" ng-controller="ContentController">
+		
+		<div class="content">
+
+			<div class="item" ng-repeat="link in links | filter: {title : searchFilter} | orderBy: '-score'">
+				
+				<div class="rank"><p ng-cloak>{{$index + 1}}</p></div>
+
+				<div class="score">
+
+					<a href="#"><i class="fa fa-caret-up"></i></a>
+					<p ng-cloak>{{link.score}}</p>
+					<a href="#"><i class="fa fa-caret-down"></i></a>
+
+				</div>
+
+				<div class="thumb" ng-style="{'background-image' : 'url({{link.thumbUri}})'}"></div>
+
+				<div class="name">
+
+					<h4><a href="{{link.uri}}">{{link.title}}</a></h4>
+					<p class="secondary">submitted 8 hours ago by <a href="{{link.authorUri}}">{{link.author}}</a> to <a href="http://www.reddit.com/r/{{link.subreddit}}">/r/{{link.subreddit}}</a></p>
+					
+					<ul class="inline">
+						<li><a href="#">{{link.comments}} comments</a></li> 
+						<li><a href="#">share</a></li>
+					</ul>
+
+				</div>
+
+			</div>
+		
+		</div>
+
+		<div class="sidebar">
+			
+			<div class="sidebar-item sidebar-search">
+				
+				<input id="search-widget" ng-model="searchFilter" type="text" name="search" placeholder="Search...">
+
+			</div>
+
+			<div class="sidebar-item sidebar-login">
+				
+				<input type="text" name="name" class="form-inline" placeholder="username">
+				<input type="text" name="name" class="form-inline" placeholder="password">
+				<input type="checkbox" name="remember-me" value="remember-me">
+				<p>Remember me <a href="#">Reset Password</a></p>
+
+				<input type="submit" name="login" value="login">
+
+			</div>
+
+			<div class="sidebar-item sidebar-subreddits">
+				
+				<h4 class="sidebar-title">These Subreddits</h4>
+
+				<ul class="subreddits">
+					
+					<li><a href="#">smallbusiness</a></li>
+					<li><a href="#">business</a></li>
+					<li><a href="#">marketing</a></li>
+					<li><a href="#">freelance</a></li>
+					<li><a href="#">socialmedia</a></li>
+					<li><a href="#">entrepreneur</a></li>
+					<li><a href="#">getmotivated</a></li>
+
+				</ul>
+
+
+			</div>
+
+			<div class="sidebar-item sidebar-submit-links">
+				
+				<a href="#">Submit a new link</a>
+				<a href="#">Submit a new text post</a>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<!-- Simple Modal - Remove if uneeded. -->
+	<div id="my-modal" class="modal fade" tabindex="-1" role="dialog">
+
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title title">Modal title</h4>
+				</div>
+
+				<div class="modal-body">
+					<p>Nulla porttitor accumsan tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum congue leo eget malesuada. Nulla quis lorem ut libero malesuada feugiat. Curabitur aliquet quam id dui posuere blandit. Donec rutrum congue leo eget malesuada. Donec rutrum congue leo eget malesuada. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Nulla porttitor accumsan tincidunt.</p>
+				</div>
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary"><i class="fa fa-check"></i>&nbsp;&nbsp;Save changes</button>
+				</div>
+
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+
+	</div><!-- /.modal -->
+
+	<!-- JQuery Javascript -->
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+
+	<!-- Bootstrap Javascript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<!-- Angular Javascript -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+
+	<!-- Main Javascript -->
+	<script type="text/javascript" src="./dependencies/js/app.js"></script>
+
+	<!-- Andular Dependencies -->
+
+	<!-- Controllers -->
+	<script type="text/javascript" src="./dependencies/js/controllers/contentController.js"></script>
+
+</body>
+</html>
