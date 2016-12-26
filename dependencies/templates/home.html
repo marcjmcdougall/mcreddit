@@ -1,0 +1,52 @@
+<div id="new-post">
+
+	<div ng-hide="loggedIn" class="overlay">
+		
+		<h4><i class="fa fa-lock"></i> You must be logged in to submit new links.</h4>
+
+	</div>
+
+	<h4 class="title">Submit a new post...</h4>
+
+	<form ng-submit="addPost()">
+
+		<input type="text" name="title" class="form-control" placeholder="title" ng-model="title">
+		<input type="text" name="link" class="form-control" placeholder="link" ng-model="link"> 
+		<button type="submit" class="btn btn-primary" >Add New Post</button>
+
+	</form>
+
+</div>
+
+<!-- <hr> -->
+
+<div id="posts">						
+
+	<div class="post" ng-repeat="post in posts | orderBy: '-votes'">
+			
+		<div class="row">
+			
+			<div class="col-xs-2 votes-container">
+				
+				<a href="" class="vote" ng-click="incrementVotes(post);"><i class="fa fa-caret-up"></i></a>
+				<p class="votes" ng-cloak>{{post.votes}}</p>
+				<a href="" class="vote" ng-click="decrementVotes(post);"><i class="fa fa-caret-down"></i></a>
+
+			</div>
+
+			<!-- <div class="thumb"></div> -->
+
+			<div class="col-xs-10 content-container">
+
+				<h3 ng-show="post.uri" ng-cloak><a href="{{post.uri}}" target="_blank">{{post.title}}</a></h3>
+				<h3 ng-hide="post.uri" ng-cloak>{{post.title}}</h3>
+				
+			</div>
+
+		</div>
+
+		<span class="meta" ng-cloak><a href="#!/posts/{{$index}}"><i class="fa fa-comment-o"></i>{{post.commentCount}} Comments</a> <i class="fa fa-user-o"></i>Submitted by <a href="#">{{post.author}}</a> <i class="fa fa-calendar-o"></i>{{post.date}}</span>
+
+	</div>
+
+</div>

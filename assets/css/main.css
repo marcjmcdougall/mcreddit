@@ -781,7 +781,8 @@ ul.inline li{
 	max-width: 500px;
 }
 
-#new-post{
+#new-post,
+#new-comment{
 
 	margin-bottom: 40px;
 	position: relative;
@@ -793,6 +794,16 @@ ul.inline li{
 	border: 1px solid #eff2f7;
 
 	/*opacity: 0.5;*/
+}
+
+#new-comment textarea{
+
+	border-radius: 0px;
+	margin-bottom: 15px;
+
+	min-height: 150px;
+
+	resize: vertical;
 }
 
 .overlay{

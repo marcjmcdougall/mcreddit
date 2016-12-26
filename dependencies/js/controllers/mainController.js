@@ -1,4 +1,4 @@
-app.controller('MainCtrl', ['$scope', function($scope) {
+app.controller('MainCtrl', ['$scope', 'posts', function($scope, posts) {
 
 	$scope.posts = [
 
@@ -93,6 +93,9 @@ app.controller('MainCtrl', ['$scope', function($scope) {
 
 	];
 
+
+	$scope.posts = posts.posts;
+
 	$scope.addPost = function(){
 
 		if(!$scope.title || $scope.title === ''){ 
@@ -108,8 +111,13 @@ app.controller('MainCtrl', ['$scope', function($scope) {
 			'thumbUri': '../my-reddit/assets/img/thumbs/thumb-6.jpg',
 			'uri' : $scope.link,
 			'author' : 'Squagem',
+			'comments' : [
+
+				{'author': 'Joe', 'body' : 'Cool post, brah!', date : 'August 5th', votes: 0},
+				{'author': 'Bob', 'body' : 'You are a giraffe to me.', date : 'August 5th', votes: 24}
+			],
 			'authorUri' : 'https://www.kilobytestudios.org',
-			'comments' : 27
+			'commentCount' : 2
 		}
 
 		$scope.title = '';
@@ -128,6 +136,6 @@ app.controller('MainCtrl', ['$scope', function($scope) {
 		post.votes--;
 	};
 
-	$scope.loggedIn = false;
+	$scope.loggedIn = true;
 
 }]);

@@ -29,6 +29,20 @@
 	<!-- Theme CSS -->
 	<link href="./assets/css/main.css" rel="stylesheet">
 
+	<!-- Angular Javascript -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+
+	<!-- Andular Dependencies -->
+	<!-- Modules -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.min.js"></script>
+
+	<!-- Main Javascript -->
+	<script type="text/javascript" src="./dependencies/js/app.js"></script>
+
+	<!-- Controllers -->
+	<script type="text/javascript" src="./dependencies/js/controllers/mainController.js"></script>
+	<script type="text/javascript" src="./dependencies/js/controllers/postsController.js"></script>
+
 	 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -39,7 +53,7 @@
 
 <body ng-app="McReddit">
 
-	<div id="content" ng-controller="MainCtrl">
+	<div id="content">
 
 		<div class="container">
 
@@ -61,58 +75,7 @@
 				<!-- Main Content -->
 				<div class="col-md-8">
 
-					<div id="new-post">
-
-						<div ng-hide="loggedIn" class="overlay">
-							
-							<h4>You must be logged in to submit new links.</h4>
-
-						</div>
-
-						<h4 class="title">Submit a new post...</h4>
-
-						<form ng-submit="addPost()">
-				
-							<input type="text" name="title" class="form-control" placeholder="title" ng-model="title">
-							<input type="text" name="link" class="form-control" placeholder="link" ng-model="link"> 
-							<button type="submit" class="btn btn-primary" >Add New Post</button>
-
-						</form>
-
-					</div>
-
-					<!-- <hr> -->
-			
-					<div id="posts">						
-
-						<div class="post" ng-repeat="post in posts | orderBy: '-votes'">
-								
-							<div class="row">
-								
-								<div class="col-xs-2 votes-container">
-									
-									<a href="" class="vote" ng-click="incrementVotes(post);"><i class="fa fa-caret-up"></i></a>
-									<p class="votes" ng-cloak>{{post.votes}}</p>
-									<a href="" class="vote" ng-click="decrementVotes(post);"><i class="fa fa-caret-down"></i></a>
-
-								</div>
-
-								<!-- <div class="thumb"></div> -->
-
-								<div class="col-xs-10 content-container">
-
-									<h3 ng-show="post.uri" ng-cloak><a href="{{post.uri}}" target="_blank">{{post.title}}</a></h3>
-									<h3 ng-hide="post.uri" ng-cloak>{{post.title}}</h3>
-									
-								</div>
-
-							</div>
-
-							<span class="meta" ng-cloak><a href="#"><i class="fa fa-comment-o"></i>{{post.comments}} Comments</a> <i class="fa fa-user-o"></i>Submitted by <a href="#">{{post.author}}</a> <i class="fa fa-calendar-o"></i>{{post.date}}</span>
-
-						</div>
-
-					</div>					
+					<ui-view></ui-view>			
 
 				</div>
 
@@ -153,17 +116,6 @@
 
 	<!-- Bootstrap Javascript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-	<!-- Angular Javascript -->
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
-
-	<!-- Main Javascript -->
-	<script type="text/javascript" src="./dependencies/js/app.js"></script>
-
-	<!-- Andular Dependencies -->
-
-	<!-- Controllers -->
-	<script type="text/javascript" src="./dependencies/js/controllers/mainController.js"></script>
 
 </body>
 </html>
