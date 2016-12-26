@@ -123,6 +123,11 @@ app.controller('MainCtrl', ['$scope', function($scope) {
 		post.votes++;
 	};
 
+	$scope.decrementVotes = function(post){
+
+		post.votes--;
+	};
+
 	$scope.loggedIn = false;
 
 }]);

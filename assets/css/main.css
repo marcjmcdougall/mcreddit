@@ -783,10 +783,14 @@ ul.inline li{
 
 #new-post{
 
-	margin-bottom: 90px;
+	margin-bottom: 40px;
 	position: relative;
 
 	padding: 25px;
+	padding-top: 10px;
+	padding-bottom: 80px;
+
+	border: 1px solid #eff2f7;
 
 	/*opacity: 0.5;*/
 }
@@ -799,7 +803,7 @@ ul.inline li{
 	justify-content: center;
 
 	width: 100%;
-	height: calc(100% + 50px);
+	height: calc(100%);
 	top:0px;
 	left: 0px;
 	padding: 10px;
