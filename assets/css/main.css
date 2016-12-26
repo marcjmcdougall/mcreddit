@@ -54,6 +54,14 @@
 	border-color: #3A3A3A;
 }
 
+form button[type="submit"]{
+
+	width: 25%;
+	height: 50px;
+
+	float: right;
+}
+
 /* Navigation Elements */
 a.navbar-brand{
 
@@ -126,7 +134,7 @@ a.navbar-brand,
 *{
 
 	box-sizing: border-box;
-	font-family: verdana, arial, helvetica, sans-serif;	
+	font-family: 'Hind', sans-serif;
 }
 
 body{
@@ -150,7 +158,6 @@ body{
 
 /* Secondary Text Style... */
 /* Place any selector here to which you want to apply the "title" text style. */
-.title,
 .btn,
 .navbar-brand,
 .nav li a{
@@ -215,8 +222,9 @@ body{
 
 .title{
 
-	font-weight: 700;
-	margin-top: 0px;
+	font-family: 'Montserrat', sans-serif;
+	text-transform: uppercase;
+	/*margin-bottom: 25px;*/
 }
 
 .left{
@@ -750,3 +758,174 @@ ul.inline li{
 
 	text-decoration: none;
 }
+
+/* Homepage */
+#heading{
+
+	margin-bottom: 25px;
+}
+
+#posts{
+
+	margin-bottom: 50px;
+}
+
+.post{
+
+	/*min-height: 50px;*/
+	margin-bottom: 25px;
+
+	border: 1px solid #eff2f7;
+    box-shadow: 1px 2px 12px 0px rgba(0,0,0,0.08);
+
+    padding: 10px;	
+
+    position: relative;
+}
+
+.post .content-container h3{
+
+	font-size: 1.3em;
+	margin: 0px;
+
+	/*width: 90%;*/
+
+	/*display: inline-block;*/
+	vertical-align: middle;
+}
+
+.post .content-container h3 a:hover{
+
+	text-decoration: none;
+}
+
+.votes-container{
+
+	display: inline-block;
+	vertical-align: middle;
+
+	width: 50px;
+	height: 100%;
+
+	font-size: 1.5em;
+
+	text-align: center;
+
+	margin-right: 10px;
+}
+
+.votes-container p{
+
+	margin: 0px;
+	font-size: 0.9em;
+
+	margin: 5px;
+
+	/*font-weight: 700;*/
+}
+
+.content-container{
+
+	padding-top: 10px;
+	position: relative;
+}
+
+span.meta{
+
+	font-size: 0.8em;
+	color: #777777;
+	position: absolute;
+
+	bottom: 20px;
+	left: 95px;
+}
+
+span.meta i{
+
+	margin-right: 5px;
+}
+
+span.meta a{
+
+	color: #777777;
+
+	margin-right: 15px;
+}
+
+
+.vote{
+
+	display: inline-block;
+	/*background-color: #337ab7;*/
+	/*color: #FFFFFF;*/
+	/*padding: 5px;*/
+
+	font-size: 1.0em;
+	width: 30px;
+	height: 30px;
+
+	text-align: center;
+	padding-top: 3px;
+
+	color: #3A3A3A;
+	opacity: 0.4;
+
+	/*border-radius: 15px;*/
+
+	-webkit-transition: 0.5s; /* Safari */
+    transition: 0.5s;
+}
+
+a.vote:hover,
+a.vote.active{
+
+	/*background-color: #3A3A3A;*/
+	/*color: #FFFFFF;*/
+	color: #3A3A3A;
+	opacity: 1.0;
+}
+
+/* Sidebar */
+.sidebar-widget{
+
+	background-color: #3A3A3A;
+	color: #EFEFEF;
+
+	padding: 20px;
+
+	margin-bottom: 25px;
+}
+
+.sidebar-widget .btn:hover{
+
+	background-color: #FFFFFF;
+	color: #3A3A3A;
+}
+
+.sidebar-widget .btn{
+
+	width: 100%;
+	float: none;
+}
+
+.sidebar-widget .title{
+
+	color: #FFFFFF;
+}
+
+.sidebar-widget h4{
+
+	margin-top: 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

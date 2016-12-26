@@ -8,6 +8,7 @@ app.controller('MainCtrl', ['$scope', function($scope) {
 			'subreddit': 'getmotivated',
 			'thumbUri': '../my-reddit/assets/img/thumbs/thumb-1.jpg',
 			'uri' : '',
+			'date' : 'August 9th, 2017',
 			'author' : 'Dicktits McGee',
 			'authorUri' : 'https://www.kilobytestudios.org',
 			'comments' : 40
@@ -18,6 +19,7 @@ app.controller('MainCtrl', ['$scope', function($scope) {
 			'subreddit': 'startups',
 			'thumbUri': '../my-reddit/assets/img/thumbs/thumb-2.jpg',
 			'uri' : 'http://www.google.com',
+			'date' : 'August 9th, 2017',
 			'author' : 'Squagem',
 			'authorUri' : 'https://www.kilobytestudios.org',
 			'comments' : 220
@@ -28,6 +30,7 @@ app.controller('MainCtrl', ['$scope', function($scope) {
 			'subreddit': 'wordpress',
 			'thumbUri': '../my-reddit/assets/img/thumbs/thumb-3.jpg',
 			'uri' : '',
+			'date' : 'August 9th, 2017',
 			'author' : 'Squagem',
 			'authorUri' : 'https://www.kilobytestudios.org',
 			'comments' : 6
@@ -38,6 +41,7 @@ app.controller('MainCtrl', ['$scope', function($scope) {
 			'subreddit': 'growmybusiness',
 			'thumbUri': '../my-reddit/assets/img/thumbs/thumb-4.jpg',
 			'uri' : '',
+			'date' : 'August 9th, 2017',
 			'author' : 'Squagem',
 			'authorUri' : 'https://www.kilobytestudios.org',
 			'comments' : 27
@@ -48,6 +52,7 @@ app.controller('MainCtrl', ['$scope', function($scope) {
 			'subreddit': 'smallbusiness',
 			'thumbUri': '../my-reddit/assets/img/thumbs/thumb-5.jpg',
 			'uri' : 'http://www.google.com',
+			'date' : 'August 9th, 2017',
 			'author' : 'Squagem',
 			'authorUri' : 'https://www.kilobytestudios.org',
 			'comments' : 27
@@ -58,6 +63,7 @@ app.controller('MainCtrl', ['$scope', function($scope) {
 			'subreddit': 'freelance',
 			'thumbUri': '../my-reddit/assets/img/thumbs/thumb-6.jpg',
 			'uri' : '',
+			'date' : 'August 9th, 2017',
 			'author' : 'Squagem',
 			'authorUri' : 'https://www.kilobytestudios.org',
 			'comments' : 27
@@ -68,6 +74,7 @@ app.controller('MainCtrl', ['$scope', function($scope) {
 			'subreddit': 'entrepreneur',
 			'thumbUri': '../my-reddit/assets/img/thumbs/thumb-7.jpg',
 			'uri' : '',
+			'date' : 'August 9th, 2017',
 			'author' : 'Squagem',
 			'authorUri' : 'https://www.kilobytestudios.org',
 			'comments' : 27
@@ -78,6 +85,7 @@ app.controller('MainCtrl', ['$scope', function($scope) {
 			'subreddit': 'freelance',
 			'thumbUri': '../my-reddit/assets/img/thumbs/thumb-8.jpg',
 			'uri' : 'http://www.google.com',
+			'date' : 'August 9th, 2017',
 			'author' : 'Squagem',
 			'authorUri' : 'https://www.kilobytestudios.org',
 			'comments' : 27
